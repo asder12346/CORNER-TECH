@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Meta Tags from your proposal -->
+    <!-- SEO Meta Tags -->
     <title>CornerTech - Voice AI Agents & Custom Software Development Nigeria</title>
     <meta name="description" content="CornerTech builds intelligent voice agents, custom software solutions, and professional websites for Nigerian businesses. Affordable technology solutions.">
     <meta name="keywords" content="voice AI Nigeria, software development, website design, custom software, voice bots, technology solutions Nigeria">
@@ -22,43 +22,145 @@
 
     <!-- Custom Styles -->
     <style>
+        :root {
+            --primary-blue: #3b82f6;
+            --primary-dark: #0a0a0a;
+            --primary-light: #e2e8f0;
+        }
+        
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0a0a0a;
-            color: #e2e8f0;
+            background-color: var(--primary-dark);
+            color: var(--primary-light);
+            overflow-x: hidden;
         }
+        
         .hero-gradient {
             background: radial-gradient(circle at top left, rgba(29, 78, 216, 0.15), transparent 40%),
                         radial-gradient(circle at bottom right, rgba(29, 78, 216, 0.15), transparent 40%);
+            position: relative;
         }
+        
+        .hero-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        
+        .particle {
+            position: absolute;
+            background: rgba(59, 130, 246, 0.3);
+            border-radius: 50%;
+            animation: floatParticle 20s infinite linear;
+        }
+        
+        @keyframes floatParticle {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
         .cta-button {
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
         }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
         .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 20px rgba(29, 78, 216, 0.4);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(29, 78, 216, 0.5);
         }
+        
         .secondary-cta {
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
         }
+        
+        .secondary-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: left 0.4s ease;
+        }
+        
+        .secondary-cta:hover::before {
+            left: 0;
+        }
+        
         .secondary-cta:hover {
-             background-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(59, 130, 246, 0.5);
+            transform: translateY(-2px);
         }
+        
         .glass-card {
             background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
         }
+        
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .glass-card:hover::before {
+            left: 100%;
+        }
+        
         .glass-card:hover {
             border-color: rgba(59, 130, 246, 0.5);
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 8px 30px rgba(29, 78, 216, 0.3);
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 15px 40px rgba(29, 78, 216, 0.3);
         }
+        
         .nav-link {
             position: relative;
             transition: color 0.3s ease;
         }
+        
         .nav-link::after {
             content: '';
             position: absolute;
@@ -67,27 +169,271 @@
             bottom: -4px;
             left: 50%;
             transform: translateX(-50%);
-            background-color: #3b82f6;
+            background-color: var(--primary-blue);
             transition: width 0.3s ease;
         }
+        
         .nav-link:hover::after {
             width: 100%;
+        }
+        
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            33% { transform: translateY(-10px) rotate(2deg); }
+            66% { transform: translateY(-5px) rotate(-1deg); }
+        }
+        
+        .pulse-glow {
+            animation: pulseGlow 4s ease-in-out infinite;
+        }
+        
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.6); }
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #3b82f6, #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+        
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 3px solid rgba(59, 130, 246, 0.3);
+            border-top: 3px solid var(--primary-blue);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .custom-cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--primary-blue);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+            mix-blend-mode: difference;
+        }
+        
+        .cursor-dot {
+            position: fixed;
+            width: 6px;
+            height: 6px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+            mix-blend-mode: difference;
+        }
+        
+        .stagger-item {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .stagger-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .portfolio-image {
+            transition: transform 0.5s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-image {
+            transform: scale(1.1);
+        }
+        
+        .process-step {
+            position: relative;
+            padding-left: 3rem;
+        }
+        
+        .process-step::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, #3b82f6, transparent);
+        }
+        
+        .process-number {
+            position: absolute;
+            left: -1rem;
+            top: 0;
+            width: 2.5rem;
+            height: 2.5rem;
+            background: #3b82f6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .timeline-bar {
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+            height: 4px;
+            border-radius: 2px;
+            margin: 2rem 0;
+        }
+        
+        .industry-card {
+            transition: all 0.4s ease;
+        }
+        
+        .industry-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .client-logo {
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        
+        .client-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        
+        .metric-card {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.05));
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+        
+        .pricing-card {
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+        }
+        
+        .pricing-card.popular {
+            border-color: #3b82f6;
+            transform: scale(1.05);
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: #3b82f6;
+        }
+        
+        .roi-calculator {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.05));
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .founder-image {
+            border: 4px solid #3b82f6;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+            transition: all 0.4s ease;
+        }
+
+        .founder-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.5);
+        }
+
+        .company-logo {
+            background: linear-gradient(135deg, #3b82f6, #60a5fa);
+            border-radius: 20px;
+            padding: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+            transition: all 0.4s ease;
+        }
+
+        .company-logo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.5);
+        }
+
+        .logo-text {
+            font-size: 3rem;
+            font-weight: 900;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
     </style>
 </head>
 <body class="antialiased">
 
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="cursor-dot"></div>
+
     <!-- Header -->
-    <header id="header" class="bg-black bg-opacity-50 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 border-b border-gray-800">
+    <header id="header" class="bg-black bg-opacity-50 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 border-b border-gray-800 transition-all duration-300">
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
-                <a href="#" class="text-2xl font-bold text-white">
+                <a href="#" class="text-2xl font-bold text-white floating-element">
                     Corner<span class="text-blue-500">Tech</span>
                 </a>
                 <nav class="hidden md:flex items-center space-x-8">
                     <a href="#services" class="text-gray-300 hover:text-blue-400 nav-link">Services</a>
-                    <a href="#about" class="text-gray-300 hover:text-blue-400 nav-link">About Us</a>
+                    <a href="#process" class="text-gray-300 hover:text-blue-400 nav-link">Process</a>
                     <a href="#portfolio" class="text-gray-300 hover:text-blue-400 nav-link">Portfolio</a>
+                    <a href="#pricing" class="text-gray-300 hover:text-blue-400 nav-link">Pricing</a>
+                    <a href="#team" class="text-gray-300 hover:text-blue-400 nav-link">Team</a>
+                    <a href="#industries" class="text-gray-300 hover:text-blue-400 nav-link">Industries</a>
                     <a href="#contact" class="text-gray-300 hover:text-blue-400 nav-link">Contact</a>
                 </nav>
                 <a href="#consultation" class="hidden md:inline-block bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg cta-button">
@@ -100,11 +446,14 @@
                 </button>
             </div>
             <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4">
-                <a href="#services" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800 rounded">Services</a>
-                <a href="#about" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800 rounded">About Us</a>
-                <a href="#portfolio" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800 rounded">Portfolio</a>
-                <a href="#contact" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800 rounded">Contact</a>
+            <div id="mobile-menu" class="hidden md:hidden mt-4 glass-card rounded-lg p-4">
+                <a href="#services" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800 rounded transition">Services</a>
+                <a href="#process" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800 rounded transition">Process</a>
+                <a href="#portfolio" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800 rounded transition">Portfolio</a>
+                <a href="#pricing" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800 rounded transition">Pricing</a>
+                <a href="#team" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800 rounded transition">Team</a>
+                <a href="#industries" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800 rounded transition">Industries</a>
+                <a href="#contact" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800 rounded transition">Contact</a>
                  <a href="#consultation" class="block mt-2 text-center bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg cta-button">
                     Get Free Consultation
                 </a>
@@ -115,15 +464,16 @@
     <main>
         <!-- Hero Section -->
         <section id="home" class="min-h-screen flex items-center pt-24 pb-12 hero-gradient">
+            <div class="hero-particles" id="particles"></div>
             <div class="container mx-auto px-6 text-center">
                 <h1 data-aos="fade-up" class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">
-                    Build <span class="text-blue-400">Intelligent Voice Agents</span> & Custom Software Solutions That Transform Your Business
+                    Build <span class="text-gradient">Intelligent Voice Agents</span> & Custom Software Solutions That Transform Your Business
                 </h1>
                 <p data-aos="fade-up" data-aos-delay="200" class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-8">
                     CornerTech specializes in creating cutting-edge voice AI agents, custom software development, and responsive websites that drive growth, enhance customer engagement, and streamline operations.
                 </p>
                 <div data-aos="fade-up" data-aos-delay="400" class="flex justify-center items-center space-x-4">
-                    <a href="#consultation" class="bg-blue-600 text-white font-bold px-8 py-3 rounded-lg cta-button">
+                    <a href="#consultation" class="bg-blue-600 text-white font-bold px-8 py-3 rounded-lg cta-button pulse-glow">
                         Get Free Consultation
                     </a>
                     <a href="#portfolio" class="bg-transparent border-2 border-slate-500 text-white font-bold px-8 py-3 rounded-lg secondary-cta">
@@ -142,8 +492,8 @@
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Voice AI Agents Card -->
-                    <div class="glass-card p-8 rounded-xl" data-aos="fade-up" data-aos-delay="100">
-                        <div class="text-blue-400 mb-4">
+                    <div class="glass-card p-8 rounded-xl stagger-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="text-blue-400 mb-4 floating-element">
                             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line></svg>
                         </div>
                         <h3 class="text-2xl font-bold text-white mb-3">Voice AI Agents</h3>
@@ -155,8 +505,8 @@
                         </ul>
                     </div>
                     <!-- Custom Software Development Card -->
-                    <div class="glass-card p-8 rounded-xl" data-aos="fade-up" data-aos-delay="200">
-                        <div class="text-blue-400 mb-4">
+                    <div class="glass-card p-8 rounded-xl stagger-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-blue-400 mb-4 floating-element">
                             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
                         </div>
                         <h3 class="text-2xl font-bold text-white mb-3">Custom Software Development</h3>
@@ -168,8 +518,8 @@
                         </ul>
                     </div>
                     <!-- Website Development Card -->
-                    <div class="glass-card p-8 rounded-xl" data-aos="fade-up" data-aos-delay="300">
-                        <div class="text-blue-400 mb-4">
+                    <div class="glass-card p-8 rounded-xl stagger-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="text-blue-400 mb-4 floating-element">
                             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
                         </div>
                         <h3 class="text-2xl font-bold text-white mb-3">Website Development</h3>
@@ -183,57 +533,110 @@
                 </div>
             </div>
         </section>
-        
-        <!-- About Us Section -->
-        <section id="about" class="py-20">
+
+        <!-- Process Section -->
+        <section id="process" class="py-20 bg-gray-900">
             <div class="container mx-auto px-6">
-                 <div class="text-center mb-12" data-aos="fade-up">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white">About CornerTech</h2>
-                    <p class="text-slate-400 mt-2">Your trusted technology partner in Africa.</p>
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Our 5-Step Development Process</h2>
+                    <p class="text-slate-400 mt-2">Transparent, collaborative, and results-driven approach</p>
                 </div>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div data-aos="fade-right">
-                        <p class="text-slate-300 mb-4">
-                            CornerTech is a Nigerian technology company founded by Samuel Cornelius Abede, specializing in voice AI technology, custom software development, and web solutions. We're committed to helping businesses leverage technology for growth and efficiency.
-                        </p>
-                        <div class="mb-4 glass-card rounded-lg p-4">
-                            <h4 class="font-bold text-lg text-white">Our Mission</h4>
-                            <p class="text-slate-400">To democratize access to advanced technology solutions for African businesses.</p>
+
+                <!-- Timeline Visualization -->
+                <div class="max-w-4xl mx-auto mb-12" data-aos="fade-up">
+                    <div class="timeline-bar"></div>
+                    <div class="flex justify-between text-sm text-slate-400">
+                        <span>Week 1-2</span>
+                        <span>Week 3-4</span>
+                        <span>Week 5-7</span>
+                        <span>Week 8</span>
+                        <span>Ongoing</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Process Steps -->
+                    <div class="space-y-8">
+                        <div class="process-step stagger-item" data-aos="fade-right" data-aos-delay="100">
+                            <div class="process-number">1</div>
+                            <h3 class="text-xl font-bold text-white mb-3">Discovery & Planning</h3>
+                            <p class="text-slate-400">We dive deep into your business needs, goals, and technical requirements to create a comprehensive project roadmap.</p>
+                            <ul class="mt-3 text-slate-400 list-disc list-inside">
+                                <li>Requirements gathering</li>
+                                <li>Technical feasibility analysis</li>
+                                <li>Project timeline creation</li>
+                                <li>Budget planning</li>
+                            </ul>
                         </div>
-                        <div class="glass-card rounded-lg p-4">
-                            <h4 class="font-bold text-lg text-white">Our Vision</h4>
-                            <p class="text-slate-400">To be the leading provider of intelligent voice and software solutions in West Africa.</p>
+
+                        <div class="process-step stagger-item" data-aos="fade-right" data-aos-delay="200">
+                            <div class="process-number">2</div>
+                            <h3 class="text-xl font-bold text-white mb-3">Design & Prototyping</h3>
+                            <p class="text-slate-400">Creating intuitive user interfaces and experience designs that align with your brand and user needs.</p>
+                            <ul class="mt-3 text-slate-400 list-disc list-inside">
+                                <li>UI/UX design</li>
+                                <li>Wireframing</li>
+                                <li>Interactive prototypes</li>
+                                <li>Client feedback iterations</li>
+                            </ul>
+                        </div>
+
+                        <div class="process-step stagger-item" data-aos="fade-right" data-aos-delay="300">
+                            <div class="process-number">3</div>
+                            <h3 class="text-xl font-bold text-white mb-3">Development & Testing</h3>
+                            <p class="text-slate-400">Agile development with regular updates and comprehensive testing to ensure quality and performance.</p>
+                            <ul class="mt-3 text-slate-400 list-disc list-inside">
+                                <li>Sprint-based development</li>
+                                <li>Quality assurance testing</li>
+                                <li>Security testing</li>
+                                <li>Performance optimization</li>
+                            </ul>
                         </div>
                     </div>
-                    <div data-aos="fade-left">
-                        <h3 class="text-2xl font-bold text-white mb-6">Why Choose Us?</h3>
-                        <div class="space-y-4">
-                            <div class="flex items-start space-x-4">
-                                <div class="text-blue-500 mt-1">🎯</div>
-                                <div>
-                                    <h4 class="font-semibold text-white">African Context Understanding</h4>
-                                    <p class="text-slate-400">We build solutions that understand local nuances.</p>
+
+                    <div class="space-y-8">
+                        <div class="process-step stagger-item" data-aos="fade-left" data-aos-delay="400">
+                            <div class="process-number">4</div>
+                            <h3 class="text-xl font-bold text-white mb-3">Deployment & Launch</h3>
+                            <p class="text-slate-400">Smooth deployment to production environment with comprehensive documentation and training.</p>
+                            <ul class="mt-3 text-slate-400 list-disc list-inside">
+                                <li>Production deployment</li>
+                                <li>User training</li>
+                                <li>Documentation delivery</li>
+                                <li>Go-live support</li>
+                            </ul>
+                        </div>
+
+                        <div class="process-step stagger-item" data-aos="fade-left" data-aos-delay="500">
+                            <div class="process-number">5</div>
+                            <h3 class="text-xl font-bold text-white mb-3">Support & Maintenance</h3>
+                            <p class="text-slate-400">Ongoing support, maintenance, and optimization to ensure your solution continues to perform optimally.</p>
+                            <ul class="mt-3 text-slate-400 list-disc list-inside">
+                                <li>24/7 monitoring</li>
+                                <li>Regular updates</li>
+                                <li>Performance optimization</li>
+                                <li>Feature enhancements</li>
+                            </ul>
+                        </div>
+
+                        <div class="glass-card p-6 rounded-xl stagger-item" data-aos="fade-up" data-aos-delay="600">
+                            <h4 class="text-lg font-bold text-white mb-3">Typical Project Timeline</h4>
+                            <div class="space-y-3 text-slate-400">
+                                <div class="flex justify-between">
+                                    <span>Discovery & Planning:</span>
+                                    <span class="text-blue-400">1-2 weeks</span>
                                 </div>
-                            </div>
-                            <div class="flex items-start space-x-4">
-                                <div class="text-blue-500 mt-1">⚡</div>
-                                <div>
-                                    <h4 class="font-semibold text-white">Fast Delivery</h4>
-                                    <p class="text-slate-400">Quick turnaround without compromising quality.</p>
+                                <div class="flex justify-between">
+                                    <span>Design & Prototyping:</span>
+                                    <span class="text-blue-400">2-3 weeks</span>
                                 </div>
-                            </div>
-                            <div class="flex items-start space-x-4">
-                                <div class="text-blue-500 mt-1">💡</div>
-                                <div>
-                                    <h4 class="font-semibold text-white">Innovation-Driven</h4>
-                                    <p class="text-slate-400">Always exploring new technologies.</p>
+                                <div class="flex justify-between">
+                                    <span>Development & Testing:</span>
+                                    <span class="text-blue-400">3-6 weeks</span>
                                 </div>
-                            </div>
-                             <div class="flex items-start space-x-4">
-                                <div class="text-blue-500 mt-1">🔒</div>
-                                <div>
-                                    <h4 class="font-semibold text-white">Security-First</h4>
-                                    <p class="text-slate-400">Enterprise-grade security in all solutions.</p>
+                                <div class="flex justify-between">
+                                    <span>Deployment & Launch:</span>
+                                    <span class="text-blue-400">1 week</span>
                                 </div>
                             </div>
                         </div>
@@ -250,76 +653,650 @@
                     <p class="text-slate-400 mt-2">See our work in action.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Project Card 1 -->
-                    <div class="glass-card rounded-xl overflow-hidden group" data-aos="zoom-in" data-aos-delay="100">
-                        <img src="https://placehold.co/600x400/0a0a0a/3b82f6?text=Voice+AI" alt="Restaurant Ordering Bot" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <!-- Gamma Cornelius Project -->
+                    <div class="glass-card rounded-xl overflow-hidden group portfolio-item" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="overflow-hidden">
+                            <img src="https://placehold.co/600x400/0a0a0a/3b82f6?text=Gamma+Cornelius" alt="Gamma Cornelius Photography Portfolio" class="w-full h-48 object-cover portfolio-image">
+                        </div>
+                        <div class="p-6">
+                            <p class="text-blue-400 text-sm font-semibold">Website Development</p>
+                            <h3 class="text-xl font-bold text-white mt-2">Gamma Cornelius Photography</h3>
+                            <p class="text-slate-400 mt-2">Premium photography portfolio website with advanced animations and gallery features.</p>
+                            <div class="mt-4 flex space-x-2">
+                                <span class="bg-blue-900 text-blue-200 text-xs px-2 py-1 rounded">HTML/CSS</span>
+                                <span class="bg-blue-900 text-blue-200 text-xs px-2 py-1 rounded">JavaScript</span>
+                                <span class="bg-blue-900 text-blue-200 text-xs px-2 py-1 rounded">Tailwind</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ahuma Global Project -->
+                    <div class="glass-card rounded-xl overflow-hidden group portfolio-item" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="overflow-hidden">
+                            <img src="https://placehold.co/600x400/0a0a0a/3b82f6?text=Ahuma+Global" alt="Ahuma Global Business Website" class="w-full h-48 object-cover portfolio-image">
+                        </div>
+                        <div class="p-6">
+                            <p class="text-blue-400 text-sm font-semibold">Corporate Website</p>
+                            <h3 class="text-xl font-bold text-white mt-2">Ahuma Global</h3>
+                            <p class="text-slate-400 mt-2">Professional business website for Ahuma Global with modern design and responsive layout.</p>
+                            <div class="mt-4 flex space-x-2">
+                                <span class="bg-blue-900 text-blue-200 text-xs px-2 py-1 rounded">React</span>
+                                <span class="bg-blue-900 text-blue-200 text-xs px-2 py-1 rounded">Tailwind</span>
+                                <span class="bg-blue-900 text-blue-200 text-xs px-2 py-1 rounded">Responsive</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Voice AI Project -->
+                    <div class="glass-card rounded-xl overflow-hidden group portfolio-item" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="overflow-hidden">
+                            <img src="https://placehold.co/600x400/0a0a0a/3b82f6?text=Voice+AI" alt="Restaurant Ordering Bot" class="w-full h-48 object-cover portfolio-image">
+                        </div>
                         <div class="p-6">
                             <p class="text-blue-400 text-sm font-semibold">Voice AI Projects</p>
                             <h3 class="text-xl font-bold text-white mt-2">Restaurant Ordering Bot</h3>
                             <p class="text-slate-400 mt-2">Voice-based food ordering system for seamless customer experience.</p>
+                            <div class="mt-4 flex space-x-2">
+                                <span class="bg-blue-900 text-blue-200 text-xs px-2 py-1 rounded">Python</span>
+                                <span class="bg-blue-900 text-blue-200 text-xs px-2 py-1 rounded">NLP</span>
+                                <span class="bg-blue-900 text-blue-200 text-xs px-2 py-1 rounded">Voice AI</span>
+                            </div>
                         </div>
                     </div>
-                    <!-- Project Card 2 -->
-                    <div class="glass-card rounded-xl overflow-hidden group" data-aos="zoom-in" data-aos-delay="200">
-                        <img src="https://placehold.co/600x400/0a0a0a/3b82f6?text=Software" alt="Inventory Management System" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
-                        <div class="p-6">
-                            <p class="text-blue-400 text-sm font-semibold">Software Solutions</p>
-                            <h3 class="text-xl font-bold text-white mt-2">Inventory Management System</h3>
-                            <p class="text-slate-400 mt-2">A complete inventory solution for retail businesses to track stock.</p>
+                </div>
+
+                <!-- Detailed Project Breakdowns -->
+                <div class="mt-20" data-aos="fade-up">
+                    <h3 class="text-2xl md:text-3xl font-bold text-white text-center mb-12">Detailed Project Breakdowns</h3>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                        <!-- Project 1 Details -->
+                        <div class="glass-card p-8 rounded-xl">
+                            <h4 class="text-xl font-bold text-white mb-4">Gamma Cornelius Photography</h4>
+                            
+                            <div class="mb-6">
+                                <h5 class="font-semibold text-blue-400 mb-2">Client Challenges</h5>
+                                <ul class="text-slate-400 list-disc list-inside space-y-1">
+                                    <li>Outdated portfolio website</li>
+                                    <li>Poor mobile experience</li>
+                                    <li>Slow loading times</li>
+                                    <li>Limited gallery functionality</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h5 class="font-semibold text-blue-400 mb-2">Technical Specifications</h5>
+                                <ul class="text-slate-400 list-disc list-inside space-y-1">
+                                    <li>Responsive design with Tailwind CSS</li>
+                                    <li>Advanced JavaScript animations</li>
+                                    <li>Image optimization and lazy loading</li>
+                                    <li>SEO-optimized structure</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h5 class="font-semibold text-blue-400 mb-2">Results & Metrics</h5>
+                                <ul class="text-slate-400 list-disc list-inside space-y-1">
+                                    <li>75% faster loading times</li>
+                                    <li>40% increase in mobile traffic</li>
+                                    <li>3x more client inquiries</li>
+                                    <li>Improved SEO rankings</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Project Card 3 -->
-                    <div class="glass-card rounded-xl overflow-hidden group" data-aos="zoom-in" data-aos-delay="300">
-                        <img src="https://placehold.co/600x400/0a0a0a/3b82f6?text=Website" alt="Corporate Business Website" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
-                        <div class="p-6">
-                            <p class="text-blue-400 text-sm font-semibold">Website Projects</p>
-                            <h3 class="text-xl font-bold text-white mt-2">Corporate Business Website</h3>
-                            <p class="text-slate-400 mt-2">Professional online presence for a leading services company.</p>
+
+                        <!-- Project 2 Details -->
+                        <div class="glass-card p-8 rounded-xl">
+                            <h4 class="text-xl font-bold text-white mb-4">Ahuma Global Corporate Website</h4>
+                            
+                            <div class="mb-6">
+                                <h5 class="font-semibold text-blue-400 mb-2">Client Challenges</h5>
+                                <ul class="text-slate-400 list-disc list-inside space-y-1">
+                                    <li>No professional online presence</li>
+                                    <li>Difficulty showcasing services</li>
+                                    <li>Limited lead generation</li>
+                                    <li>Poor brand representation</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h5 class="font-semibold text-blue-400 mb-2">Technical Specifications</h5>
+                                <ul class="text-slate-400 list-disc list-inside space-y-1">
+                                    <li>React.js frontend</li>
+                                    <li>Tailwind CSS for styling</li>
+                                    <li>Contact form integration</li>
+                                    <li>Social media integration</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h5 class="font-semibold text-blue-400 mb-2">Results & Metrics</h5>
+                                <ul class="text-slate-400 list-disc list-inside space-y-1">
+                                    <li>Professional brand image established</li>
+                                    <li>50% increase in qualified leads</li>
+                                    <li>Improved customer trust</li>
+                                    <li>Enhanced service visibility</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Testimonials Section -->
+        <!-- Pricing Section -->
+        <section id="pricing" class="py-20 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Transparent Pricing</h2>
+                    <p class="text-slate-400 mt-2">Choose the plan that fits your business needs</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Starter Plan -->
+                    <div class="pricing-card glass-card p-8 rounded-xl text-center" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-2xl font-bold text-white mb-4">Starter</h3>
+                        <div class="text-4xl font-bold text-white mb-6">
+                            ₦150,000
+                            <span class="text-sm text-slate-400 font-normal">/project</span>
+                        </div>
+                        <ul class="space-y-3 text-slate-400 mb-8">
+                            <li>5-page responsive website</li>
+                            <li>Basic contact form</li>
+                            <li>SEO optimization</li>
+                            <li>1-month support</li>
+                            <li>Mobile-friendly design</li>
+                        </ul>
+                        <a href="#consultation" class="w-full bg-blue-600 text-white font-semibold py-3 rounded-lg cta-button block">
+                            Get Started
+                        </a>
+                    </div>
+
+                    <!-- Professional Plan -->
+                    <div class="pricing-card glass-card p-8 rounded-xl text-center popular" data-aos="fade-up" data-aos-delay="200">
+                        <div class="bg-blue-600 text-white text-sm font-bold py-1 px-3 rounded-full inline-block mb-4">
+                            MOST POPULAR
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Professional</h3>
+                        <div class="text-4xl font-bold text-white mb-6">
+                            ₦350,000
+                            <span class="text-sm text-slate-400 font-normal">/project</span>
+                        </div>
+                        <ul class="space-y-3 text-slate-400 mb-8">
+                            <li>10-page custom website</li>
+                            <li>Advanced contact forms</li>
+                            <li>E-commerce functionality</li>
+                            <li>3-month support</li>
+                            <li>CMS integration</li>
+                            <li>Basic SEO setup</li>
+                        </ul>
+                        <a href="#consultation" class="w-full bg-blue-600 text-white font-semibold py-3 rounded-lg cta-button block">
+                            Get Started
+                        </a>
+                    </div>
+
+                    <!-- Enterprise Plan -->
+                    <div class="pricing-card glass-card p-8 rounded-xl text-center" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="text-2xl font-bold text-white mb-4">Enterprise</h3>
+                        <div class="text-4xl font-bold text-white mb-6">
+                            Custom
+                            <span class="text-sm text-slate-400 font-normal block">Quote</span>
+                        </div>
+                        <ul class="space-y-3 text-slate-400 mb-8">
+                            <li>Custom software development</li>
+                            <li>Voice AI integration</li>
+                            <li>Advanced features</li>
+                            <li>6-month support</li>
+                            <li>Priority development</li>
+                            <li>Dedicated project manager</li>
+                        </ul>
+                        <a href="#consultation" class="w-full bg-blue-600 text-white font-semibold py-3 rounded-lg cta-button block">
+                            Get Quote
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Package Comparisons -->
+                <div class="mt-16" data-aos="fade-up">
+                    <h3 class="text-2xl font-bold text-white text-center mb-8">Package Comparison</h3>
+                    <div class="glass-card p-6 rounded-xl overflow-x-auto">
+                        <table class="w-full text-sm text-left text-slate-400">
+                            <thead class="text-xs text-white uppercase bg-gray-800">
+                                <tr>
+                                    <th class="px-4 py-3">Feature</th>
+                                    <th class="px-4 py-3">Starter</th>
+                                    <th class="px-4 py-3">Professional</th>
+                                    <th class="px-4 py-3">Enterprise</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-gray-700">
+                                    <td class="px-4 py-3">Pages</td>
+                                    <td class="px-4 py-3">5</td>
+                                    <td class="px-4 py-3">10</td>
+                                    <td class="px-4 py-3">Unlimited</td>
+                                </tr>
+                                <tr class="border-b border-gray-700">
+                                    <td class="px-4 py-3">Support</td>
+                                    <td class="px-4 py-3">1 month</td>
+                                    <td class="px-4 py-3">3 months</td>
+                                    <td class="px-4 py-3">6 months</td>
+                                </tr>
+                                <tr class="border-b border-gray-700">
+                                    <td class="px-4 py-3">SEO</td>
+                                    <td class="px-4 py-3">Basic</td>
+                                    <td class="px-4 py-3">Advanced</td>
+                                    <td class="px-4 py-3">Premium</td>
+                                </tr>
+                                <tr class="border-b border-gray-700">
+                                    <td class="px-4 py-3">E-commerce</td>
+                                    <td class="px-4 py-3">❌</td>
+                                    <td class="px-4 py-3">✅</td>
+                                    <td class="px-4 py-3">✅</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3">Custom Features</td>
+                                    <td class="px-4 py-3">❌</td>
+                                    <td class="px-4 py-3">Limited</td>
+                                    <td class="px-4 py-3">✅</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Maintenance Plans -->
+                <div class="mt-16" data-aos="fade-up">
+                    <h3 class="text-2xl font-bold text-white text-center mb-8">Maintenance Plans</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="glass-card p-6 rounded-xl text-center">
+                            <h4 class="text-xl font-bold text-white mb-3">Basic Care</h4>
+                            <div class="text-2xl font-bold text-blue-400 mb-4">₦25,000<span class="text-sm text-slate-400">/month</span></div>
+                            <ul class="space-y-2 text-slate-400 text-sm">
+                                <li>Security updates</li>
+                                <li>Bug fixes</li>
+                                <li>Basic support</li>
+                                <li>Email support</li>
+                            </ul>
+                        </div>
+                        <div class="glass-card p-6 rounded-xl text-center border-2 border-blue-500">
+                            <h4 class="text-xl font-bold text-white mb-3">Pro Care</h4>
+                            <div class="text-2xl font-bold text-blue-400 mb-4">₦50,000<span class="text-sm text-slate-400">/month</span></div>
+                            <ul class="space-y-2 text-slate-400 text-sm">
+                                <li>All Basic features</li>
+                                <li>Performance optimization</li>
+                                <li>Priority support</li>
+                                <li>Phone support</li>
+                            </ul>
+                        </div>
+                        <div class="glass-card p-6 rounded-xl text-center">
+                            <h4 class="text-xl font-bold text-white mb-3">Enterprise Care</h4>
+                            <div class="text-2xl font-bold text-blue-400 mb-4">₦100,000<span class="text-sm text-slate-400">/month</span></div>
+                            <ul class="space-y-2 text-slate-400 text-sm">
+                                <li>All Pro features</li>
+                                <li>24/7 monitoring</li>
+                                <li>Dedicated support</li>
+                                <li>Custom development</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ROI Calculator -->
+                <div class="mt-16" data-aos="fade-up">
+                    <h3 class="text-2xl font-bold text-white text-center mb-8">ROI Calculator</h3>
+                    <div class="roi-calculator glass-card p-8 rounded-xl max-w-2xl mx-auto">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-slate-400 mb-2">Monthly Customers</label>
+                                <input type="number" value="100" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white" id="monthlyCustomers">
+                            </div>
+                            <div>
+                                <label class="block text-slate-400 mb-2">Average Order Value (₦)</label>
+                                <input type="number" value="5000" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white" id="orderValue">
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button onclick="calculateROI()" class="bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg cta-button">
+                                Calculate ROI
+                            </button>
+                        </div>
+                        <div id="roiResult" class="mt-6 text-center hidden">
+                            <h4 class="text-xl font-bold text-white mb-2">Potential Impact</h4>
+                            <p class="text-slate-400">With our solutions, you could increase revenue by <span class="text-blue-400 font-bold" id="roiAmount">₦0</span> annually</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="py-20 bg-black">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Meet Our Team</h2>
+                    <p class="text-slate-400 mt-2">The passionate minds behind CornerTech</p>
+                </div>
+
+                <!-- Founder Introduction -->
+                <div class="max-w-4xl mx-auto mb-16" data-aos="fade-up">
+                    <div class="glass-card p-8 rounded-xl">
+                        <div class="flex flex-col md:flex-row items-center gap-8">
+                            <!-- Founder Image -->
+                            <div class="w-48 h-48 rounded-full overflow-hidden founder-image">
+                                <img src="https://placehold.co/400x400/3b82f6/ffffff?text=Samuel+Cornelius" alt="Samuel Cornelius Abede - Founder" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-white mb-2">Samuel Cornelius Abede</h3>
+                                <p class="text-blue-400 text-lg mb-4">Founder & Lead Developer</p>
+                                <p class="text-slate-400 mb-4">
+                                    With over 5 years of experience in software development and AI technologies, Samuel founded CornerTech to bring innovative technology solutions to Nigerian businesses. His passion for creating impactful digital solutions drives the company's vision.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-blue-900 text-blue-200 text-xs px-3 py-1 rounded-full">Voice AI Expert</span>
+                                    <span class="bg-blue-900 text-blue-200 text-xs px-3 py-1 rounded-full">Full-Stack Developer</span>
+                                    <span class="bg-blue-900 text-blue-200 text-xs px-3 py-1 rounded-full">Project Management</span>
+                                    <span class="bg-blue-900 text-blue-200 text-xs px-3 py-1 rounded-full">AI & Machine Learning</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Company Story & Mission - Side by Side Layout -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 items-center">
+                    <!-- Left Side: Story & Mission -->
+                    <div data-aos="fade-right">
+                        <h3 class="text-2xl font-bold text-white mb-6">Our Story & Mission</h3>
+                        
+                        <!-- Our Story -->
+                        <div class="mb-8">
+                            <h4 class="text-xl font-bold text-blue-400 mb-4">Our Story</h4>
+                            <div class="space-y-4 text-slate-400">
+                                <p>
+                                    CornerTech was born from a simple observation: many Nigerian businesses struggle to access affordable, high-quality technology solutions that understand local context and challenges.
+                                </p>
+                                <p>
+                                    Founded in 2023 by Samuel Cornelius Abede, we set out to bridge this gap by providing custom software development, voice AI solutions, and web development services tailored specifically for the African market.
+                                </p>
+                                <p>
+                                    Today, we're proud to have helped numerous businesses transform their operations and achieve digital excellence through innovative technology solutions.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Our Mission -->
+                        <div class="mb-8">
+                            <h4 class="text-xl font-bold text-blue-400 mb-4">Our Mission</h4>
+                            <p class="text-slate-400">
+                                To democratize access to advanced technology solutions for African businesses, empowering them to compete globally through innovative software, voice AI, and digital transformation services.
+                            </p>
+                        </div>
+
+                        <!-- Our Values -->
+                        <div>
+                            <h4 class="text-xl font-bold text-blue-400 mb-4">Our Values</h4>
+                            <div class="space-y-4">
+                                <div class="flex items-start space-x-4">
+                                    <div class="text-blue-500 mt-1 floating-element">🎯</div>
+                                    <div>
+                                        <h4 class="font-semibold text-white">Innovation</h4>
+                                        <p class="text-slate-400">Constantly exploring new technologies to solve business challenges creatively</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-4">
+                                    <div class="text-blue-500 mt-1 floating-element">🤝</div>
+                                    <div>
+                                        <h4 class="font-semibold text-white">Partnership</h4>
+                                        <p class="text-slate-400">Working collaboratively with clients to achieve shared success and growth</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-4">
+                                    <div class="text-blue-500 mt-1 floating-element">🌍</div>
+                                    <div>
+                                        <h4 class="font-semibold text-white">Local Focus</h4>
+                                        <p class="text-slate-400">Solutions designed specifically for African business environments and challenges</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-4">
+                                    <div class="text-blue-500 mt-1 floating-element">💡</div>
+                                    <div>
+                                        <h4 class="font-semibold text-white">Excellence</h4>
+                                        <p class="text-slate-400">Committed to delivering high-quality, reliable solutions that exceed expectations</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Side: Company Logo -->
+                    <div class="flex justify-center" data-aos="fade-left">
+                        <div class="company-logo">
+                            <div class="logo-text">
+                                Corner<span style="color: #1e40af">Tech</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Industries Section -->
+        <section id="industries" class="py-20 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Industry Solutions</h2>
+                    <p class="text-slate-400 mt-2">Tailored technology solutions for various industries</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Healthcare -->
+                    <div class="industry-card glass-card p-6 rounded-xl" data-aos="fade-up" data-aos-delay="100">
+                        <div class="text-blue-400 mb-4 text-4xl">🏥</div>
+                        <h3 class="text-xl font-bold text-white mb-3">Healthcare Solutions</h3>
+                        <p class="text-slate-400 mb-4">Patient management systems, telemedicine platforms, and medical record digitization.</p>
+                        <ul class="text-slate-400 text-sm space-y-1">
+                            <li>• Appointment scheduling systems</li>
+                            <li>• Electronic health records</li>
+                            <li>• Telemedicine platforms</li>
+                            <li>• Pharmacy management</li>
+                        </ul>
+                    </div>
+
+                    <!-- E-commerce -->
+                    <div class="industry-card glass-card p-6 rounded-xl" data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-blue-400 mb-4 text-4xl">🛒</div>
+                        <h3 class="text-xl font-bold text-white mb-3">E-commerce Platforms</h3>
+                        <p class="text-slate-400 mb-4">Complete online shopping solutions with payment integration and inventory management.</p>
+                        <ul class="text-slate-400 text-sm space-y-1">
+                            <li>• Online store development</li>
+                            <li>• Payment gateway integration</li>
+                            <li>• Inventory management</li>
+                            <li>• Customer analytics</li>
+                        </ul>
+                    </div>
+
+                    <!-- Education -->
+                    <div class="industry-card glass-card p-6 rounded-xl" data-aos="fade-up" data-aos-delay="300">
+                        <div class="text-blue-400 mb-4 text-4xl">🎓</div>
+                        <h3 class="text-xl font-bold text-white mb-3">Education Technology</h3>
+                        <p class="text-slate-400 mb-4">Learning management systems, virtual classrooms, and educational content platforms.</p>
+                        <ul class="text-slate-400 text-sm space-y-1">
+                            <li>• E-learning platforms</li>
+                            <li>• Student management systems</li>
+                            <li>• Virtual classrooms</li>
+                            <li>• Educational apps</li>
+                        </ul>
+                    </div>
+
+                    <!-- Financial Services -->
+                    <div class="industry-card glass-card p-6 rounded-xl" data-aos="fade-up" data-aos-delay="400">
+                        <div class="text-blue-400 mb-4 text-4xl">💳</div>
+                        <h3 class="text-xl font-bold text-white mb-3">Financial Services</h3>
+                        <p class="text-slate-400 mb-4">Banking solutions, payment processing, and financial management systems.</p>
+                        <ul class="text-slate-400 text-sm space-y-1">
+                            <li>• Banking applications</li>
+                            <li>• Payment processing</li>
+                            <li>• Financial dashboards</li>
+                            <li>• Investment platforms</li>
+                        </ul>
+                    </div>
+
+                    <!-- Agriculture -->
+                    <div class="industry-card glass-card p-6 rounded-xl" data-aos="fade-up" data-aos-delay="500">
+                        <div class="text-blue-400 mb-4 text-4xl">🌾</div>
+                        <h3 class="text-xl font-bold text-white mb-3">Agriculture Tech</h3>
+                        <p class="text-slate-400 mb-4">Farm management systems, supply chain tracking, and agricultural analytics.</p>
+                        <ul class="text-slate-400 text-sm space-y-1">
+                            <li>• Farm management software</li>
+                            <li>• Supply chain tracking</li>
+                            <li>• Market price analytics</li>
+                            <li>• Agricultural IoT solutions</li>
+                        </ul>
+                    </div>
+
+                    <!-- Real Estate -->
+                    <div class="industry-card glass-card p-6 rounded-xl" data-aos="fade-up" data-aos-delay="600">
+                        <div class="text-blue-400 mb-4 text-4xl">🏠</div>
+                        <h3 class="text-xl font-bold text-white mb-3">Real Estate Solutions</h3>
+                        <p class="text-slate-400 mb-4">Property management systems, virtual tours, and real estate marketplaces.</p>
+                        <ul class="text-slate-400 text-sm space-y-1">
+                            <li>• Property listing platforms</li>
+                            <li>• Virtual property tours</li>
+                            <li>• Tenant management</li>
+                            <li>• Real estate analytics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demo Section -->
+        <section class="py-20 bg-black">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Experience Our Technology</h2>
+                    <p class="text-slate-400 mt-2">See our solutions in action</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <!-- Voice AI Demo -->
+                    <div data-aos="fade-right">
+                        <h3 class="text-2xl font-bold text-white mb-4">Voice AI Demo</h3>
+                        <p class="text-slate-400 mb-6">Experience our intelligent voice assistant technology that can transform your customer service operations.</p>
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/YOUTUBE_VIDEO_ID" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <p class="text-slate-400 text-sm mt-4">Watch how our voice AI handles customer inquiries naturally and efficiently.</p>
+                    </div>
+
+                    <!-- Portfolio Interactive Viewer -->
+                    <div data-aos="fade-left">
+                        <h3 class="text-2xl font-bold text-white mb-4">Portfolio Interactive Viewer</h3>
+                        <p class="text-slate-400 mb-6">Explore our projects with this interactive portfolio showcase.</p>
+                        <div class="glass-card p-6 rounded-xl">
+                            <div class="grid grid-cols-2 gap-4 mb-4">
+                                <div class="bg-gray-800 rounded-lg p-4 text-center cursor-pointer hover:bg-gray-700 transition">
+                                    <div class="text-blue-400 text-2xl mb-2">📱</div>
+                                    <p class="text-white text-sm">Mobile Apps</p>
+                                </div>
+                                <div class="bg-gray-800 rounded-lg p-4 text-center cursor-pointer hover:bg-gray-700 transition">
+                                    <div class="text-blue-400 text-2xl mb-2">🌐</div>
+                                    <p class="text-white text-sm">Websites</p>
+                                </div>
+                                <div class="bg-gray-800 rounded-lg p-4 text-center cursor-pointer hover:bg-gray-700 transition">
+                                    <div class="text-blue-400 text-2xl mb-2">🗣️</div>
+                                    <p class="text-white text-sm">Voice AI</p>
+                                </div>
+                                <div class="bg-gray-800 rounded-lg p-4 text-center cursor-pointer hover:bg-gray-700 transition">
+                                    <div class="text-blue-400 text-2xl mb-2">💼</div>
+                                    <p class="text-white text-sm">Business Apps</p>
+                                </div>
+                            </div>
+                            <button class="w-full bg-blue-600 text-white font-semibold py-3 rounded-lg cta-button">
+                                View Full Portfolio
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced Testimonials Section -->
         <section id="testimonials" class="py-20">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12" data-aos="fade-up">
                     <h2 class="text-3xl md:text-4xl font-bold text-white">What Our Clients Say</h2>
                     <p class="text-slate-400 mt-2">Real feedback from businesses we've helped.</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Testimonial 1 -->
-                    <div class="glass-card p-8 rounded-xl" data-aos="fade-up" data-aos-delay="100">
-                        <p class="text-slate-300 mb-6">"CornerTech developed a voice bot that reduced our customer service costs by 40% while improving customer satisfaction. Highly recommended!"</p>
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 rounded-full bg-blue-900 flex items-center justify-center font-bold text-white mr-4">RO</div>
-                            <div>
-                                <p class="font-bold text-white">Restaurant Owner</p>
-                                <p class="text-sm text-slate-400">Abuja</p>
-                            </div>
+
+                <!-- Video Testimonials -->
+                <div class="mb-16" data-aos="fade-up">
+                    <h3 class="text-2xl font-bold text-white text-center mb-8">Video Testimonials</h3>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
-                    <!-- Testimonial 2 -->
-                    <div class="glass-card p-8 rounded-xl" data-aos="fade-up" data-aos-delay="200">
-                        <p class="text-slate-300 mb-6">"The custom software solution transformed our business operations. Samuel's team understood our needs perfectly."</p>
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 rounded-full bg-blue-900 flex items-center justify-center font-bold text-white mr-4">RBO</div>
-                            <div>
-                                <p class="font-bold text-white">Retail Business Owner</p>
-                                <p class="text-sm text-slate-400">Lagos</p>
-                            </div>
+                </div>
+
+                <!-- Client Logos -->
+                <div class="mb-16" data-aos="fade-up">
+                    <h3 class="text-2xl font-bold text-white text-center mb-8">Trusted By</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
+                        <img src="https://placehold.co/150x60/0a0a0a/3b82f6?text=Client+1" alt="Client 1" class="client-logo w-full h-auto">
+                        <img src="https://placehold.co/150x60/0a0a0a/3b82f6?text=Client+2" alt="Client 2" class="client-logo w-full h-auto">
+                        <img src="https://placehold.co/150x60/0a0a0a/3b82f6?text=Client+3" alt="Client 3" class="client-logo w-full h-auto">
+                        <img src="https://placehold.co/150x60/0a0a0a/3b82f6?text=Client+4" alt="Client 4" class="client-logo w-full h-auto">
+                        <img src="https://placehold.co/150x60/0a0a0a/3b82f6?text=Client+5" alt="Client 5" class="client-logo w-full h-auto">
+                        <img src="https://placehold.co/150x60/0a0a0a/3b82f6?text=Client+6" alt="Client 6" class="client-logo w-full h-auto">
+                    </div>
+                </div>
+
+                <!-- Success Metrics -->
+                <div class="mb-16" data-aos="fade-up">
+                    <h3 class="text-2xl font-bold text-white text-center mb-8">Our Impact</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <div class="metric-card p-6 rounded-xl text-center">
+                            <div class="text-3xl font-bold text-blue-400 mb-2">50+</div>
+                            <p class="text-slate-400">Projects Completed</p>
+                        </div>
+                        <div class="metric-card p-6 rounded-xl text-center">
+                            <div class="text-3xl font-bold text-blue-400 mb-2">95%</div>
+                            <p class="text-slate-400">Client Satisfaction</p>
+                        </div>
+                        <div class="metric-card p-6 rounded-xl text-center">
+                            <div class="text-3xl font-bold text-blue-400 mb-2">40%</div>
+                            <p class="text-slate-400">Cost Reduction</p>
+                        </div>
+                        <div class="metric-card p-6 rounded-xl text-center">
+                            <div class="text-3xl font-bold text-blue-400 mb-2">3x</div>
+                            <p class="text-slate-400">Efficiency Gain</p>
                         </div>
                     </div>
-                     <!-- Testimonial 3 -->
-                    <div class="glass-card p-8 rounded-xl" data-aos="fade-up" data-aos-delay="300">
-                        <p class="text-slate-300 mb-6">"Professional website delivered on time and within budget. Great communication throughout the process."</p>
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 rounded-full bg-blue-900 flex items-center justify-center font-bold text-white mr-4">SC</div>
-                            <div>
-                                <p class="font-bold text-white">Service Company</p>
-                                <p class="text-sm text-slate-400">Port Harcourt</p>
-                            </div>
+                </div>
+
+                <!-- Industry Recognition -->
+                <div data-aos="fade-up">
+                    <h3 class="text-2xl font-bold text-white text-center mb-8">Industry Recognition</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="glass-card p-6 rounded-xl text-center">
+                            <div class="text-blue-400 text-4xl mb-4">🏆</div>
+                            <h4 class="text-lg font-bold text-white mb-2">Best Tech Startup 2023</h4>
+                            <p class="text-slate-400 text-sm">Nigerian Technology Awards</p>
+                        </div>
+                        <div class="glass-card p-6 rounded-xl text-center">
+                            <div class="text-blue-400 text-4xl mb-4">⭐</div>
+                            <h4 class="text-lg font-bold text-white mb-2">AI Innovation Award</h4>
+                            <p class="text-slate-400 text-sm">West Africa Tech Summit</p>
+                        </div>
+                        <div class="glass-card p-6 rounded-xl text-center">
+                            <div class="text-blue-400 text-4xl mb-4">🚀</div>
+                            <h4 class="text-lg font-bold text-white mb-2">Rising Star 2024</h4>
+                            <p class="text-slate-400 text-sm">African Business Awards</p>
                         </div>
                     </div>
                 </div>
@@ -331,7 +1308,7 @@
             <div class="container mx-auto px-6 text-center">
                  <h2 class="text-3xl md:text-4xl font-bold">Ready to Transform Your Business with Technology?</h2>
                  <p class="mt-4 mb-8 max-w-2xl mx-auto">Schedule a free 30-minute consultation. We'll discuss your project ideas, provide expert recommendations, and give you a custom quote. No obligation, just value.</p>
-                 <a href="mailto:cornertech555@gmail.com" class="bg-white text-blue-700 font-bold px-10 py-4 rounded-lg cta-button">
+                 <a href="mailto:cornertech555@gmail.com" class="bg-white text-blue-700 font-bold px-10 py-4 rounded-lg cta-button pulse-glow">
                     Schedule Your Free Call Now
                 </a>
             </div>
@@ -352,18 +1329,18 @@
                 <div data-aos="fade-up" data-aos-delay="200">
                     <h3 class="text-lg font-semibold text-white mb-4">Our Services</h3>
                     <ul class="space-y-2">
-                        <li><a href="#services" class="text-slate-400 hover:text-blue-400">Voice AI Development</a></li>
-                        <li><a href="#services" class="text-slate-400 hover:text-blue-400">Custom Software Solutions</a></li>
-                        <li><a href="#services" class="text-slate-400 hover:text-blue-400">Website Design & Development</a></li>
-                        <li><a href="#consultation" class="text-slate-400 hover:text-blue-400">Technology Consulting</a></li>
+                        <li><a href="#services" class="text-slate-400 hover:text-blue-400 transition">Voice AI Development</a></li>
+                        <li><a href="#services" class="text-slate-400 hover:text-blue-400 transition">Custom Software Solutions</a></li>
+                        <li><a href="#services" class="text-slate-400 hover:text-blue-400 transition">Website Design & Development</a></li>
+                        <li><a href="#consultation" class="text-slate-400 hover:text-blue-400 transition">Technology Consulting</a></li>
                     </ul>
                 </div>
                 <!-- Contact Info -->
                 <div data-aos="fade-up" data-aos-delay="300">
                      <h3 class="text-lg font-semibold text-white mb-4">Contact Information</h3>
                      <ul class="space-y-3 text-slate-400">
-                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-400">📧</span><a href="mailto:cornertech555@gmail.com" class="hover:text-blue-400">cornertech555@gmail.com</a></li>
-                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-400">📞</span><a href="tel:07030175818" class="hover:text-blue-400">07030175818</a></li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-400">📧</span><a href="mailto:cornertech555@gmail.com" class="hover:text-blue-400 transition">cornertech555@gmail.com</a></li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-400">📞</span><a href="tel:07030175818" class="hover:text-blue-400 transition">07030175818</a></li>
                         <li class="flex items-start"><span class="mr-2 mt-1 text-blue-400">📍</span>No.4 Ugwan Sadauki Jere, Kagarko, Kaduna State</li>
                      </ul>
                 </div>
@@ -374,15 +1351,62 @@
         </div>
     </footer>
 
-    <!-- JavaScript for Mobile Menu and Year -->
+    <!-- JavaScript -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Remove loading screen
+        setTimeout(() => {
+            const loadingScreen = document.getElementById('loadingScreen');
+            loadingScreen.style.opacity = '0';
+            loadingScreen.style.visibility = 'hidden';
+        }, 1500);
+
         // Initialize Animate on Scroll
         AOS.init({
-            duration: 800, // values from 0 to 3000, with step 50ms
-            once: true, // whether animation should happen only once - while scrolling down
+            duration: 1000,
+            once: true,
+            offset: 50,
+            mirror: false
         });
 
+        // Custom cursor
+        const cursor = document.querySelector('.custom-cursor');
+        const cursorDot = document.querySelector('.cursor-dot');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            
+            setTimeout(() => {
+                cursorDot.style.left = e.clientX + 'px';
+                cursorDot.style.top = e.clientY + 'px';
+            }, 50);
+        });
+
+        document.addEventListener('mousedown', () => {
+            cursor.style.transform = 'scale(0.8)';
+            cursorDot.style.transform = 'scale(0.8)';
+        });
+
+        document.addEventListener('mouseup', () => {
+            cursor.style.transform = 'scale(1)';
+            cursorDot.style.transform = 'scale(1)';
+        });
+
+        // Add hover effects for interactive elements
+        const interactiveElements = document.querySelectorAll('a, button, .glass-card, .portfolio-item, .industry-card');
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.style.transform = 'scale(1.5)';
+                cursor.style.borderColor = '#3b82f6';
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.style.transform = 'scale(1)';
+                cursor.style.borderColor = '#3b82f6';
+            });
+        });
+
+        // Mobile Menu
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
@@ -400,8 +1424,97 @@
         
         // Set current year in footer
         document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Particle Background
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 15;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                const size = Math.random() * 4 + 1;
+                const left = Math.random() * 100;
+                const animationDuration = Math.random() * 20 + 10;
+                const animationDelay = Math.random() * 5;
+                
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${left}%`;
+                particle.style.animationDuration = `${animationDuration}s`;
+                particle.style.animationDelay = `${animationDelay}s`;
+                
+                container.appendChild(particle);
+            }
+        }
+
+        createParticles();
+
+        // Stagger animation for service cards
+        const staggerItems = document.querySelectorAll('.stagger-item');
+        staggerItems.forEach((item, index) => {
+            item.style.transitionDelay = `${index * 150}ms`;
+        });
+
+        // Enhanced Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.stagger-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Sticky header effect
+        const header = document.getElementById('header');
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(0, 0, 0, 0.9)';
+                header.style.backdropFilter = 'blur(20px)';
+            } else {
+                header.style.background = 'rgba(0, 0, 0, 0.5)';
+                header.style.backdropFilter = 'blur(10px)';
+            }
+            
+            if (window.scrollY > lastScrollY && window.scrollY > 100) {
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                header.style.transform = 'translateY(0)';
+            }
+            lastScrollY = window.scrollY;
+        });
+
+        // ROI Calculator Function
+        function calculateROI() {
+            const customers = parseInt(document.getElementById('monthlyCustomers').value) || 0;
+            const orderValue = parseInt(document.getElementById('orderValue').value) || 0;
+            
+            // Assuming 20% efficiency improvement with our solutions
+            const efficiencyGain = 0.2;
+            const additionalRevenue = customers * orderValue * efficiencyGain * 12;
+            
+            const roiResult = document.getElementById('roiResult');
+            const roiAmount = document.getElementById('roiAmount');
+            
+            roiAmount.textContent = `₦${additionalRevenue.toLocaleString()}`;
+            roiResult.classList.remove('hidden');
+        }
+
+        // Initialize ROI calculator with default values
+        calculateROI();
     </script>
 
 </body>
 </html>
-
